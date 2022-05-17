@@ -21,6 +21,9 @@ model User {
   fisrtName String?
   LastName  String?
 
+  // reference form bookmark || must require while in relation 1 user many bookmark
+  bookmarks Bookmark[]
+  @@map("Users")
 }
 
 model Bookmark {
@@ -31,4 +34,11 @@ model Bookmark {
   title       String
   description String?
   link        String
+
+  userId Int
+
+  // userId in bookmark || id in user 
+  user User @relation(fields: [userId], references: [id])
+
+  @@map("Bookmarks")
 }
