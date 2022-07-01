@@ -4,9 +4,9 @@ import { JWTGuard } from 'src/auth/guard';
 
 @Controller('users')
 export class UserController {
-    @UseGuards(JWTGuard)
-    @Get()
-    getUser(){
-        return {user: "hi"}
-    }
+  @UseGuards(JWTGuard)
+  @Get()
+  getUser() {
+    return { user: 'hi' };
+  }
 }
